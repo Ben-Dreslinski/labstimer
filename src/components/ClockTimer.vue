@@ -177,6 +177,18 @@
             let firstHour = parseInt(first.time.split(":")[0]);
             let secondHour = parseInt(second.time.split(":")[0]);
 
+            let firstMinute = parseInt(first.time.split(":")[1]);
+            let secondMinute = parseInt(second.time.split(":")[1]);
+
+            if (firstMinute >= 30)
+            {
+                firstHour += 1;
+            }
+            if (secondMinute >= 30)
+            {
+                secondHour += 1;
+            }
+
             let firstDist = Math.abs((firstHour - 3) % 24);
             firstDist = (firstDist > 12) ? 24 - firstDist : firstDist;
 
